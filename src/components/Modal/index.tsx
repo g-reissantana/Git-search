@@ -16,8 +16,8 @@ export const Modal = ({ user, onClose }: {
         new Field("Fechar")
     ]
 
-    function getField(field: Field) {
-        return <C.UserInfoContainer>
+    function getField(field: Field, index: Number) {
+        return <C.UserInfoContainer key={index}>
             <C.UserInfoTitle>
                 {field.title}
             </C.UserInfoTitle>
@@ -27,8 +27,8 @@ export const Modal = ({ user, onClose }: {
         </C.UserInfoContainer>
     }
 
-    function getButton(field: Field) {
-        return <C.DivButton>
+    function getButton(field: Field, index: Number) {
+        return <C.DivButton key={index}>
             <C.UserButton onClick={onClose}>
                 {field.value}
             </C.UserButton>
@@ -45,12 +45,12 @@ export const Modal = ({ user, onClose }: {
                     <h1>{user.name || user.username}</h1>
                     <hr />
                     <div>
-                        {fields.map(item => {
+                        {fields.map((item, index) => {
                             switch (item.type) {
                                 case FieldType.BUTTON:
-                                    return getButton(item)
+                                    return getButton(item, index)
                                 default:
-                                    return getField(item)
+                                    return getField(item, index)
                             }
                         })}
                     </div>
