@@ -4,7 +4,7 @@ import logo from '../../assets/logo_big.svg'
 export const Container = styled.main`
     filter:  ${(props: {blur: boolean}) => props.blur ? 'blur(2px)' : 'blur(0)'};
 
-    background-color: ${props => props.dark ? '#321B4A' : '#f2f2f2'};
+    background-color: ${(props: {blur: boolean, dark: boolean}) => props.dark ? '#321B4A' : '#f2f2f2'};
 
     background-position: center;
     background-repeat: no-repeat;

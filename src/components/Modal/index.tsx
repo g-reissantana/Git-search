@@ -16,7 +16,7 @@ export const Modal = ({ user, onClose }: {
         new Field("Fechar")
     ]
 
-    function getField(field: Field, index: Number) {
+    function getField(field: Field, index: number) {
         return <C.UserInfoContainer key={index}>
             <C.UserInfoTitle>
                 {field.title}
@@ -27,7 +27,7 @@ export const Modal = ({ user, onClose }: {
         </C.UserInfoContainer>
     }
 
-    function getButton(field: Field, index: Number) {
+    function getButton(field: Field, index: number) {
         return <C.DivButton key={index}>
             <C.UserButton onClick={onClose}>
                 {field.value}

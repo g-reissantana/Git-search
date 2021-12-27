@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -75,6 +76,11 @@ export const ModalInfo = styled.div`
         margin: auto;
     }
 `
+
+// interface UserInfoProps {
+//     key: React.Attributes['key']
+// }
+
 export const UserInfoContainer = styled.div`
     width: 50%;
 
