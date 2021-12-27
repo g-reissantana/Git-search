@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-    background: #f2f2f2;
+    background-color: ${props => props.theme === true ? '#462567' : '#f2f2f2'};
+    
+    filter: ${props => props.theme === true ? 'brightness(1.2);' : ''};
 
     width: 100vw;
     height: 80px;
@@ -14,9 +16,12 @@ export const Container = styled.header`
     position: fixed;
     z-index: 97;
 
+    transition: 0.3s;
+
     box-shadow: -2px 4px 15px #000000AA;
 
 `
+
 export const ResponseImg = styled.div`
 
     width: 80px;
@@ -24,27 +29,37 @@ export const ResponseImg = styled.div`
 
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    gap: 18px;
+    margin: 0 30px 0 22px;
+
+    img {
+        cursor: pointer;
+    }
 `
 
 export const SearchDiv = styled.div`
     width: 90%;
-    height: 35px;
 
-    border: solid 1px #00000022;
     border-radius: 5px;
+    border: solid 1px #00000022;
+    border-right: 0;
+    border-color: ${props => props.theme === true ? '#8C56C2' : '#00000022'};
+
+    height: 38px;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    margin-right: 20px;
+    margin-right: 35px;
 `
 
 export const InputSearch = styled.input`
 
     flex: 1;
     outline: none;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 
     padding: 10px;
 
@@ -52,8 +67,12 @@ export const InputSearch = styled.input`
 export const ResponseIcon = styled.div`
 
     width: 40px;
-    height: 100%;
+    height: 38px;
     background: #8C56C2;
+    background: #48B3FE;
+
+    background: ${props => props.theme === true ? '#8C56C2' : '#48B3FE'};
+
 
     display: flex;
     align-items: center;
@@ -61,6 +80,7 @@ export const ResponseIcon = styled.div`
 
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+
 
     cursor: pointer;
 

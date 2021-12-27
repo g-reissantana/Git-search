@@ -6,9 +6,10 @@ interface UserProps {
 
     user: UserHome
     onSeeMoreClick: (username: string) => void
+    dark: boolean
 }
 
-export const BoxUser = ({user, onSeeMoreClick}: UserProps) => {
+export const BoxUser = ({user, onSeeMoreClick, dark}: UserProps) => {
 
     function handleClickSeeMore() {
 
@@ -16,13 +17,13 @@ export const BoxUser = ({user, onSeeMoreClick}: UserProps) => {
     }
 
     return(
-        <C.Container>
+        <C.Container theme={dark}>
             <C.BoxAvatar src={user.avatarUrl} />
-            <C.BoxDescription>
+            <C.BoxDescription theme={dark}>
                 <h1>{user.username}</h1>
                 <a href={user.htmlUrl}>{user.htmlUrl}</a>
                 <small>1.00</small>
-                <C.SeeMore onClick={handleClickSeeMore}>
+                <C.SeeMore theme={dark} onClick={handleClickSeeMore}>
                     Ver mais
                 </C.SeeMore>
             </C.BoxDescription>

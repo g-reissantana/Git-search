@@ -4,6 +4,7 @@ import logo from '../../assets/logo_big.svg'
 export const Container = styled.main`
     filter:  ${(props: {blur: boolean}) => props.blur ? 'blur(2px)' : 'blur(0)'};
 
+    background-color: ${props => props.dark ? '#321B4A' : '#f2f2f2'};
 
     background-position: center;
     background-repeat: no-repeat;
@@ -18,10 +19,11 @@ export const Container = styled.main`
     align-items: center;
     flex-wrap: wrap;
 
+    transition: 0.3s;
+
 `
 
 export const BackgroundImage = styled.div`
-
     width: 100vw;
     height: calc(100vh - 100px);
 
